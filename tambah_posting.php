@@ -6,7 +6,7 @@
         <form method="POST" enctype="multipart/form-data">
             <b>Judul</b><br><input type="text" name="judul" required><br><br>
 
-            <b>Content</b><br><textarea name="content" id="content" required></textarea><br><br>
+            <b>Content</b><br><textarea name="content" id="content" cols="20" rows="80" required></textarea><br><br>
 
             <b>Foto : </b><input type="file" name="foto" required><br><br>
                     
