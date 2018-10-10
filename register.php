@@ -31,7 +31,7 @@
 <?php
     if (isset($_POST['nim'])) {
         $nim = $_POST['nim'];
-        $nama = $_POST['nama'];
+        $nama = addslashes($_POST['nama']);
         $username = $_POST['username'];
         $password = $_POST['password'];
         $confirm_password = $_POST['confirm_password'];
