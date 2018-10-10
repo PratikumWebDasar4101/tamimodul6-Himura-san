@@ -26,10 +26,10 @@
             <input type="radio" name="jk" value="Perempuan" <?php if($data['jk'] == "Perempuan") { ?> checked <?php } ?> required> Perempuan <br><br>
 
             <b>Hobi</b> <br>
-            <input type="checkbox" name="hobi[]" value="Makan"> Makan
-            <input type="checkbox" name="hobi[]" value="Minum"> Minum
-            <input type="checkbox" name="hobi[]" value="Main"> Main
-            <input type="checkbox" name="hobi[]" value="Tidur"> Tidur <br><br>
+            <input type="checkbox" name="hobi[]" <?php if (array_search("Makan", $hobi_terpilih) > -1 ) { ?> checked <?php } ?> value="Makan"> Makan
+            <input type="checkbox" name="hobi[]" <?php if (array_search("Minum", $hobi_terpilih) > -1 ) { ?> checked <?php } ?> value="Minum"> Minum
+            <input type="checkbox" name="hobi[]" <?php if (array_search("Main", $hobi_terpilih)  > -1 ) { ?> checked <?php } ?> value="Main"> Main
+            <input type="checkbox" name="hobi[]" <?php if (array_search("Tidur", $hobi_terpilih) > -1 ) { ?> checked <?php } ?> value="Tidur"> Tidur <br><br>
                     
             <b>Fakultas</b><br>
             <select name="fakultas" id="dropdown" required>
