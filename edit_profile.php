@@ -1,6 +1,6 @@
 <?php   
-    @$id_user = $_SESSION['id_user'];
-    $query = $pdo -> prepare("SELECT * FROM tb_profile WHERE id_user = '$id_user'");
+    $nim_user = $_SESSION['nim'];
+    $query = $pdo -> prepare("SELECT * FROM tb_profile WHERE nim = '$nim_user'");
     $query -> execute();
     $data = $query -> fetch(PDO::FETCH_ASSOC);
     $hobi_terpilih = explode(", ", $data['hobi']);
@@ -12,7 +12,7 @@
     </div>
     <div id="data">
         <form method="POST">
-            <b>NIM</b><br><input type="text" name="nim" pattern="\d*" maxlength="10" value="<?php echo $data['nim']; ?>" required><br><br>                    
+            <b>NIM</b><br><input type="text" name="nim" pattern="\d*" maxlength="10" value="<?php echo $data['nim']; ?>" required disabled><br><br>
             <b>Nama</b><br><input type="text" name="nama" maxlength="35" value="<?php echo $data['nama']; ?>" required><br><br>
 
             <b>Kelas</b> <br>
@@ -53,7 +53,6 @@
 </body></html>
 <?php
     if (isset($_POST['nim'])) {
-        $nim = $_POST['nim'];
         $nama = addslashes($_POST['nama']);
         $kelas = $_POST['kelas'];
         $fakultas = $_POST['fakultas'];
@@ -63,7 +62,7 @@
 
         $list_hobi = implode(", ", $hobi);
         
-        $query = $pdo -> prepare("UPDATE tb_profile SET nim = '$nim', nama = '$nama', kelas = '$kelas', fakultas = '$fakultas', jk = '$jk', hobi = '$list_hobi', alamat = '$alamat' WHERE id_user = '$id_user'");
+        $query = $pdo -> prepare("UPDATE tb_profile SET nama = '$nama', kelas = '$kelas', fakultas = '$fakultas', jk = '$jk', hobi = '$list_hobi', alamat = '$alamat' WHERE nim = '$nim_user'");
         $query -> execute();
 
         if ($query) {
