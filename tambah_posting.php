@@ -18,8 +18,8 @@
 </body></html>
 <?php
     if (isset($_POST['judul'])) {
-        $judul = $_POST['judul'];
-        $content = $_POST['content'];
+        $judul = addslashes($_POST['judul']);
+        $content = addslashes($_POST['content']);
         $nim = $_SESSION['nim'];
 
         $nama_foto = $_FILES['foto']['name'];
