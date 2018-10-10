@@ -50,7 +50,6 @@
         $data_profile = $query_profile -> fetch(PDO::FETCH_ASSOC);
 
         if ($row != 0) {
-            $_SESSION['id_user'] = $data['id_user'];
             $_SESSION['nim'] = $data_profile['nim'];
             $_SESSION['sukses'] = "Sukses";
             header("Location: halaman.php");
