@@ -52,7 +52,7 @@
 <!-- =============================================================================== -->
 </body></html>
 <?php
-    if (isset($_POST['nim'])) {
+    if (isset($_POST['nama'])) {
         $nama = addslashes($_POST['nama']);
         $kelas = $_POST['kelas'];
         $fakultas = $_POST['fakultas'];
