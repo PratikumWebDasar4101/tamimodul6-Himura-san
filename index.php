@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if (@$_SESSION['sukses'])
+    if (isset($_SESSION['sukses']))
         header("Location: halaman.php");
         
     if (isset($_GET['exit'])) {
